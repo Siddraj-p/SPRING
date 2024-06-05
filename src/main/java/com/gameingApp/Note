@@ -1,0 +1,56 @@
+Application Startup:
+
+Spring Boot starts the application and initializes the Spring context.
+It scans the com.example.payment package for components and beans.
+Bean Initialization:
+
+Spring creates beans for Mariogame,Pasogame,Runner,superrcontragame.
+Since CreditCardProcessor is marked with @Primary, it is used as the default implementation for PaymentProcessor.
+PaymentService Injection:
+
+Spring injects the CreditCardProcessor into the PaymentService due to the @Autowired annotation in the constructor.
+CommandLineRunner Execution:
+
+After the application context is initialized, the PaymentCommandLineRunner is executed.
+It retrieves the PaymentService bean and calls processPayment(100.0).
+Payment Processing:
+
+The PaymentService calls the processPayment method of the CreditCardProcessor.
+The CreditCardProcessor processes the payment and prints the message to the console.
+This setup ensures that different implementations of PaymentProcessor can be easily switched or extended, and Spring manages the dependency injection automatically. If you want to change the default payment processor, you can adjust the @Primary annotation or configure which bean to use at runtime.
+
+
+
+
+
+
+
+
+Application Startup:
+
+Spring Boot starts the application and initializes the Spring context.
+It scans the com.example.payment package for components and beans.
+Bean Initialization:
+
+Spring creates beans for CreditCardProcessor, PayPalProcessor, and BankTransferProcessor.
+Since CreditCardProcessor is marked with @Primary, it is used as the default implementation for PaymentProcessor.
+PaymentService Injection:
+
+Spring injects the CreditCardProcessor into the PaymentService due to the @Autowired annotation in the constructor.
+CommandLineRunner Execution:
+
+After the application context is initialized, the PaymentCommandLineRunner is executed.
+It retrieves the PaymentService bean and calls processPayment(100.0).
+Payment Processing:
+
+The PaymentService calls the processPayment method of the CreditCardProcessor.
+The CreditCardProcessor processes the payment and prints the message to the console.
+This setup ensures that different implementations of PaymentProcessor can be easily switched or extended, and Spring manages the dependency injection automatically. If you want to change the default payment processor, you can adjust the @Primary annotation or configure which bean to use at runtime.
+
+
+
+
+
+
+
+
